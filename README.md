@@ -21,7 +21,7 @@ Swarm Mode enables Agent Zero to spawn multiple specialized subordinate agents t
 
 ---
 
-## 🎮 Quick 3 Step Setup
+## 🎮 Quick Setup
 
 Clone, Copy, and Paste files, Thats it!
 
