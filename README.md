@@ -31,7 +31,7 @@ Clone, Copy, and Paste files, Thats it!
 
 ## 📦 Installation
 
-###Prerequisits
+### Prerequisits
 **Must Have Agent Zero Installed**
 
 ```bash
