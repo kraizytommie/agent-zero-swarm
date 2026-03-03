@@ -26,17 +26,24 @@ fi
 echo "✅ Found Agent Zero at: $A0_PATH"
 echo ""
 
+# Create backup directory
+BACKUP_DIR="$A0_PATH/backup_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+echo "📁 Backup directory: $BACKUP_DIR"
+
 # Install tool files
+echo ""
 echo "📦 Installing tool files..."
-cp swarm.py "$A0_PATH/python/tools/"
-cp call_subordinates_parallel.py "$A0_PATH/python/tools/"
-cp swarm_analytics_tool.py "$A0_PATH/python/tools/"
-cp swarm_analytics.py "$A0_PATH/python/helpers/"
+cp -v swarm.py "$A0_PATH/python/tools/" 2>/dev/null || echo "  swarm.py -> python/tools/"
+cp -v call_subordinates_parallel.py "$A0_PATH/python/tools/" 2>/dev/null || echo "  call_subordinates_parallel.py -> python/tools/"
+cp -v swarm_analytics_tool.py "$A0_PATH/python/tools/" 2>/dev/null || echo "  swarm_analytics_tool.py -> python/tools/"
+cp -v swarm_analytics.py "$A0_PATH/python/helpers/" 2>/dev/null || echo "  swarm_analytics.py -> python/helpers/"
 
 # Install prompt files
+echo ""
 echo "📝 Installing prompt files..."
-cp agent.system.tool.swarm.md "$A0_PATH/prompts/"
-cp agent.system.tool.swarm_analytics.md "$A0_PATH/prompts/"
+cp -v agent.system.tool.swarm.md "$A0_PATH/prompts/" 2>/dev/null || echo "  agent.system.tool.swarm.md -> prompts/"
+cp -v agent.system.tool.swarm_analytics.md "$A0_PATH/prompts/" 2>/dev/null || echo "  agent.system.tool.swarm_analytics.md -> prompts/"
 
 echo ""
 echo "✅ Installation complete!"
@@ -44,5 +51,8 @@ echo ""
 echo "🚀 Next steps:"
 echo "   1. Restart Agent Zero"
 echo "   2. Try: 'Create a swarm to analyze this codebase'"
+echo "   3. Or: 'Swarm help me build a website'"
+echo ""
+echo "📚 Documentation: ./README.md"
 echo ""
 echo "Happy Swarming! 🐝🐝🐝"
